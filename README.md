@@ -2,6 +2,9 @@
 
 [![CI](https://github.com/dlotterman/datumctl-compose/actions/workflows/ci.yml/badge.svg)](https://github.com/dlotterman/datumctl-compose/actions/workflows/ci.yml)
 
+> [!WARNING]
+> Datum Compute is in an invite-only preview. This project will stay in **alpha** until Compute is officially released and a few more features are in place. Expect breaking changes.
+
 Deploy a Docker Compose application to [Datum Compute](https://datum.net) with `datumctl compose`.
 
 This is a `datumctl` plugin. It reads a normal Compose file and turns each service into a Datum workload, with private networking and optional public HTTP through Datum's load balancer.
