@@ -1,0 +1,21 @@
+# Two services on two named networks. Each Compose network becomes a Datum
+# network named <project>-<network> (compose-http-smoke-frontend and
+# compose-http-smoke-backend). Datum Compute attaches an instance to one
+# network at a time, so each service lists exactly one.
+name: compose-http-smoke
+
+networks:
+  example-network: {}
+
+services:
+  public:
+    image: docker.io/library/nginx:1.27
+    networks: [example-network]
+    ports:
+      - target: 80
+    http-port: 80
+  private:
+    image: docker.io/library/nginx:1.27
+    networks: [example-network]
+    ports:
+      - target: 80

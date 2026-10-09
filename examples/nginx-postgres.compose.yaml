@@ -1,0 +1,19 @@
+name: nginx-postgres
+
+services:
+  nginx-one:
+    image: docker.io/library/nginx:1.27
+    ports:
+      - target: 80
+
+  nginx-two:
+    image: docker.io/library/nginx:1.27
+    ports:
+      - target: 80
+
+  postgres:
+    image: docker.io/library/postgres:16
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD before deploying}
+    ports:
+      - target: 5432
